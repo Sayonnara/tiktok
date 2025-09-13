@@ -1,0 +1,171 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-black: #000;
+    --color-white: #fff;
+    --color-heart: #ff0050;
+    --colo-text-light: rgba(255, 255, 255, 0.8);
+    --colo-text-dark: rgba(0, 0, 0, 0.6);
+    --max-width: 500px;
+    --header-height: 50px;
+    --footer-height: 60px;
+
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--colo-text-light);
+    height: 100vh;
+    /*overflow: hidden;*/
+}
+
+.app-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.app-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    width: 100%;
+    max-width: var(--max-width);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    background-color: var(--color-white);
+    z-index: 10;
+    height: var(--header-height);
+
+
+}
+
+.logo-tiktok {
+    height: 30px;
+}
+
+.logo-container {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.header-item {
+    color: var(--color-black);
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0 20px;
+
+}
+
+.header-item.active {
+    color: var(--colo-text-dark);
+    font-weight: 800;
+
+}
+.videos-container {
+    flex: 1;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-top: var(--header-height);
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+    
+}
+
+.video-container{
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    position: relative;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-info{
+    position: absolute;
+    left: 10px;
+    bottom: 40px;
+   
+}
+
+
+.video-user p{
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--colo-text-light);
+}
+
+
+
+.video-sidebar{
+    position: absolute;
+    right: 1px ;
+    bottom: 10%;
+    
+}
+
+.sidebar-icon{
+    font-size: 1.1rem;
+    padding: 10px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  
+}
+
+.sidebar-icon i {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.app-footer{
+    display: flex;
+    justify-content: center;
+     justify-content: space-evenly;
+    gap: 20px;  
+    margin-top: 10px;
+
+}
+
+.footer-item{
+ display: flex;
+ flex-direction: column;
+  align-items: center;
+ gap: 5px;
+ cursor: pointer;
+ margin-bottom: 10px;
+ 
+}
+
+i{
+    font-size: 25px;
+}
+
+span{
+    font-weight: 400;
+}
+
